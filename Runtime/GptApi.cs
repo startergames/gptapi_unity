@@ -1,7 +1,11 @@
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+#if UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX
+using Unity.Plastic.Newtonsoft.Json;
+#else
 using Newtonsoft.Json;
+#endif
 using unity_gpt_api.Runtime.Options;
 using UnityEngine;
 
