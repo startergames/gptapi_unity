@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using Unity.Plastic.Newtonsoft.Json;
 
 namespace unity_gpt_api.Runtime.Options {
-    public class GptOption_Completion {
+    public class GptOption_Completion : IGptOption {
+        public string URL => "https://api.openai.com/v1/completions";
+        
         // ID of the model to use. The model ID changes the underlying AI model used for text generation. Different models have different capabilities.
-        [JsonProperty("model")]
+        [JsonProperty("model", DefaultValueHandling = DefaultValueHandling.Include)]
         public string Model { get; set; } = "text-davinci-002";
         
         // The prompt(s) to generate completions for, encoded as a string. This is the starting text that the AI will generate from.

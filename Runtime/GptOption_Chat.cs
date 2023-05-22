@@ -4,19 +4,20 @@ using Unity.Plastic.Newtonsoft.Json;
 namespace unity_gpt_api.Runtime.Options {
     public class GptOption_ChatMessage
     {
-        [JsonProperty("role")]
+        [JsonProperty("role", DefaultValueHandling = DefaultValueHandling.Include)]
         public string Role { get; set; }  // system, user, or assistant
 
-        [JsonProperty("content")]
+        [JsonProperty("content", DefaultValueHandling = DefaultValueHandling.Include)]
         public string Content { get; set; }
         
         [JsonProperty("name")]
         public string Name { get; set; } //The name of the author of this message. May contain a-z, A-Z, 0-9, and underscores, with a maximum length of 64 characters.
     }
     
-    public class ChatOptions
-    {
-        [JsonProperty("model")]
+    public class GptOption_Chat : IGptOption {
+        public string URL => "https://api.openai.com/v1/chat/completions";
+        
+        [JsonProperty("model", DefaultValueHandling = DefaultValueHandling.Include)]
         public string Model { get; set; }  // ID of the model to use.
 
         [JsonProperty("messages")]

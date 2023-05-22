@@ -1,15 +1,16 @@
 using Unity.Plastic.Newtonsoft.Json;
 
 namespace unity_gpt_api.Runtime.Options {
-    public class GptOption_Edit
-    {
-        [JsonProperty("model")]
+    public class GptOption_Edit : IGptOption {
+        public string URL => "https://api.openai.com/v1/edits";
+        
+        [JsonProperty("model", DefaultValueHandling = DefaultValueHandling.Include)]
         public string Model { get; set; }  // ID of the model to use. Options include text-davinci-edit-001 or code-davinci-edit-001.
 
         [JsonProperty("input")]
         public string Input { get; set; } = "";  // The input text to use as a starting point for the edit.
 
-        [JsonProperty("instruction")]
+        [JsonProperty("instruction", DefaultValueHandling = DefaultValueHandling.Include)]
         public string Instruction { get; set; }  // Instruction that tells the model how to edit the prompt.
 
         [JsonProperty("n")]
