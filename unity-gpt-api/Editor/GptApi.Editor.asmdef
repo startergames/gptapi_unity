@@ -1,0 +1,16 @@
+{
+    "name": "GptApi.Editor",
+    "rootNamespace": "",
+    "references": ["GUID:b66397cd559db444192ee1bc2e39e94a"],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

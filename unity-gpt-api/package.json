@@ -1,0 +1,14 @@
+{
+  "name": "com.startergames.unity-gpt-api",
+  "version": "1.0.0",
+  "displayName": "Unity GPT API",
+  "description": "API for GPT API",
+  "unity": "2021.3",
+  "keywords": ["unity", "package", "gpt", "ai"],
+  "author": {
+    "name": "Starter Games",
+    "email": "developer@startergames.com",
+    "url": "https://www.startergames.com"
+  }
+}
+
