@@ -1,8 +1,8 @@
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 using unity_gpt_api.Runtime.Options;
-using Unity.Plastic.Newtonsoft.Json;
 using UnityEngine;
 
 namespace unity_gpt_api.Runtime {

@@ -1,4 +1,5 @@
-using Unity.Plastic.Newtonsoft.Json;
+
+using Newtonsoft.Json;
 
 namespace unity_gpt_api.Runtime.Options {
     public class GptOption_Edit : IGptOption {
