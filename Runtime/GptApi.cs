@@ -1,7 +1,6 @@
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using Palmmedia.ReportGenerator.Core;
 using unity_gpt_api.Runtime.Options;
 using Unity.Plastic.Newtonsoft.Json;
 using UnityEngine;

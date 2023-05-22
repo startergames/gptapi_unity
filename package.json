@@ -4,6 +4,9 @@
   "displayName": "Unity GPT API",
   "description": "API for GPT API",
   "unity": "2021.3",
+  "dependencies": {
+    "com.unity.nuget.newtonsoft-json": "3.0.2"
+  },
   "keywords": ["unity", "package", "gpt", "ai"],
   "author": {
     "name": "Starter Games",
