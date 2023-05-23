@@ -5,9 +5,12 @@ using Unity.Plastic.Newtonsoft.Json;
 using Newtonsoft.Json;
 #endif
 
-namespace unity_gpt_api.Runtime.Options {
-    public interface IGptOption {
+namespace unity_gpt_api.Runtime.Requests {
+    public interface IGptRequest {
         [JsonIgnore]
         string URL { get; }
+        
+        [JsonIgnore]
+        System.Type ResponseType { get; }
     }
 }

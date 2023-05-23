@@ -5,9 +5,10 @@ using Unity.Plastic.Newtonsoft.Json;
 using Newtonsoft.Json;
 #endif
 
-namespace unity_gpt_api.Runtime.Options {
-    public class GptOption_Edit : IGptOption {
+namespace unity_gpt_api.Runtime.Requests {
+    public class GptRequest_Edit : IGptRequest {
         public string URL => "https://api.openai.com/v1/edits";
+        public System.Type ResponseType => typeof(GptResponse_Edit);
         
         [JsonProperty("model", DefaultValueHandling = DefaultValueHandling.Include)]
         public string Model { get; set; }  // ID of the model to use. Options include text-davinci-edit-001 or code-davinci-edit-001.

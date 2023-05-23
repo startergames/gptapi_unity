@@ -6,7 +6,7 @@ using Unity.Plastic.Newtonsoft.Json;
 #else
 using Newtonsoft.Json;
 #endif
-using unity_gpt_api.Runtime.Options;
+using unity_gpt_api.Runtime.Requests;
 using UnityEngine;
 
 namespace unity_gpt_api.Runtime {
@@ -31,18 +31,18 @@ namespace unity_gpt_api.Runtime {
             }
         }
 
-        public async Task<string> CompletionAsync(string prompt, int maxTokens = 60) {
-            var request = new GptOption_Completion
+        public async Task<GptResponse_Completion> CompletionAsync(string prompt, int maxTokens = 60) {
+            var request = new GptRequest_Completion
             {
                 Model = "text-davinci-003",
                 Prompt = prompt,
                 MaxTokens = maxTokens
             };
 
-            return await RequestAsync(request);
+            return await RequestAsync(request) as GptResponse_Completion;
         }
 
-        public async Task<string> RequestAsync<T>(T request) where T : IGptOption {
+        public async Task<IGptResponse> RequestAsync<T>(T request) where T : IGptRequest {
             client.DefaultRequestHeaders.Clear();
             client.DefaultRequestHeaders.Add("Authorization", $"Bearer {apiKey}");
             if (!string.IsNullOrEmpty(_settings.organizationId)) {
@@ -60,7 +60,7 @@ namespace unity_gpt_api.Runtime {
             }
 
             var result = await response.Content.ReadAsStringAsync();
-            return result;
+            return JsonConvert.DeserializeObject(result, request.ResponseType) as IGptResponse;
         }
     }
 }

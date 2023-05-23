@@ -6,9 +6,10 @@ using Unity.Plastic.Newtonsoft.Json;
 using Newtonsoft.Json;
 #endif
 
-namespace unity_gpt_api.Runtime.Options {
-    public class GptOption_Completion : IGptOption {
+namespace unity_gpt_api.Runtime.Requests {
+    public class GptRequest_Completion : IGptRequest {
         public string URL => "https://api.openai.com/v1/completions";
+        public System.Type ResponseType => typeof(GptResponse_Completion);
         
         // ID of the model to use. The model ID changes the underlying AI model used for text generation. Different models have different capabilities.
         [JsonProperty("model", DefaultValueHandling = DefaultValueHandling.Include)]
