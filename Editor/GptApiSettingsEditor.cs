@@ -59,6 +59,7 @@ namespace unity_gpt_api.Editor {
 
         public override void OnGUI(string searchContext) {
             EditorGUILayout.PropertyField(SettingsObject.FindProperty(nameof(GptApiSettings.apiKey)));
+            SettingsObject.ApplyModifiedProperties();
         }
     }
 }
