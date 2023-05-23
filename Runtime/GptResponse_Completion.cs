@@ -1,5 +1,10 @@
 using System.Collections.Generic;
+
+#if UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX
 using Unity.Plastic.Newtonsoft.Json;
+#else
+using Newtonsoft.Json;
+#endif
 
 namespace unity_gpt_api.Runtime.Requests {
     public class GptResponse_Completion : IGptResponse {
