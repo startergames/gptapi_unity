@@ -70,6 +70,8 @@ namespace unity_gpt_api.Runtime {
         public async Task<IGptResponse> RequestAsync<T>(T request) where T : IGptRequest {
             client.DefaultRequestHeaders.Clear();
             client.DefaultRequestHeaders.Add("Authorization", $"Bearer {apiKey}");
+            client.Timeout = TimeSpan.FromMinutes(15);
+
             if (!string.IsNullOrEmpty(_settings.organizationId)) {
                 client.DefaultRequestHeaders.Add("OpenAI-Organization", _settings.organizationId);
             }
