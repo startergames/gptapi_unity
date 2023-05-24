@@ -8,5 +8,6 @@ namespace unity_gpt_api.Runtime {
 
         public string apiKey = "";
         public string organizationId = "";
+        public string defaultCompletionModel = "";
     }
 }
