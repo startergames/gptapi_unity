@@ -20,7 +20,9 @@ namespace unity_gpt_api.Runtime {
         private readonly JsonSerializerSettings _serializerSettings = new JsonSerializerSettings
         {
             DefaultValueHandling = DefaultValueHandling.Ignore,
-            NullValueHandling = NullValueHandling.Ignore
+            NullValueHandling = NullValueHandling.Ignore,
+            Formatting = Formatting.Indented,
+            StringEscapeHandling = StringEscapeHandling.EscapeNonAscii,
         };
 
         public GptApi() {
