@@ -4,11 +4,11 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using JetBrains.Annotations;
-#if UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX
-using Unity.Plastic.Newtonsoft.Json;
-#else
+// #if UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX
+// using Unity.Plastic.Newtonsoft.Json;
+// #else
 using Newtonsoft.Json;
-#endif
+//#endif
 using unity_gpt_api.Runtime.Requests;
 using UnityEngine;
 

@@ -1,9 +1,9 @@
 
-#if UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX
-using Unity.Plastic.Newtonsoft.Json;
-#else
+// #if UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX
+// using Unity.Plastic.Newtonsoft.Json;
+// #else
 using Newtonsoft.Json;
-#endif
+//#endif
 
 namespace unity_gpt_api.Runtime.Requests {
     public class GptRequest_Edit : IGptRequest {
